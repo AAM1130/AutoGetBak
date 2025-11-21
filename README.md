@@ -17,7 +17,6 @@ allows selecting individual files, allowing the user to selectively purge unwant
 
 ### Installing
 
-* How/where to download your program
 * The .exe is stand-alone, just open to run. 
 
 ## Authors
