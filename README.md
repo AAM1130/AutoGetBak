@@ -27,6 +27,10 @@ SituationUnknown(AAM1130) - [GitHub](https://github.com/AAM1130)
 
 ## Version History
 
+* 0.2
+  * removed static size limit on the list view window
+  * added vertical and horizontal scroll bars
+
 * 0.1
   * Initial Release
 
