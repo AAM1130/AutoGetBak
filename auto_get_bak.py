@@ -88,9 +88,7 @@ tk.Button(button_frame, text="Clear Selected", command=clear_selected).pack(side
 tk.Button(button_frame, text="Purge Selected", command=delete_selected_files).pack(side="left", padx=5, pady=5)
 
 # list box frame
-listbox = tk.Listbox(root, width=100, height=15, selectmode=tk.MULTIPLE)
-listbox.pack(pady=5)
-
-
+listbox = tk.Listbox(root, selectmode=tk.MULTIPLE)
+listbox.pack(padx=10, pady=10, fill="both", expand=True)
 
 root.mainloop()
