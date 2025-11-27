@@ -7,7 +7,7 @@
 import os
 import tkinter as tk
 from tkinter import filedialog, messagebox
-from tkinter.constants import RIGHT
+from tkinter.constants import RIGHT, MULTIPLE
 
 
 # function call to choose directory to scan
@@ -88,7 +88,23 @@ tk.Button(button_frame, text="Clear Selected", command=clear_selected).pack(side
 tk.Button(button_frame, text="Purge Selected", command=delete_selected_files).pack(side="left", padx=5, pady=5)
 
 # list box frame
-listbox = tk.Listbox(root, selectmode=tk.MULTIPLE)
-listbox.pack(padx=10, pady=10, fill="both", expand=True)
+listbox_frame = tk.Frame(root)
+listbox_frame.pack(fill="both", expand=True, padx=10, pady=10)
+
+# list box
+listbox = tk.Listbox(listbox_frame, selectmode=MULTIPLE)
+listbox.grid(row=0, column=0, sticky="nsew")
+# scroll bars
+sb_y = tk.Scrollbar(listbox_frame, orient="vertical", command=listbox.yview)
+sb_y.grid(row=0, column=1, sticky="ns")
+sb_x = tk.Scrollbar(listbox_frame, orient="horizontal", command=listbox.xview)
+sb_x.grid(row=1, column=0, sticky="ew")
+
+# attach scroll bars to the list box
+listbox.configure(yscrollcommand=sb_y.set, xscrollcommand=sb_x.set)
+
+# make list box frame expandable
+listbox_frame.grid_rowconfigure(0, weight=1)
+listbox_frame.grid_columnconfigure(0, weight=1)
 
 root.mainloop()
